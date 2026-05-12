@@ -1,0 +1,11 @@
+# GitHub-side IOCs (for optional --github layer; documented even when not scanned)
+# Format: <kind>  <pattern>  <note>
+repo_name        Shai-Hulud                          public exfil repo (v1)
+repo_desc        Shai-Hulud Repository               v1 exfil repo description
+repo_desc        Sha1-Hulud: The Second Coming       v2 exfil repo description
+repo_name_glob   *-migration                         private->public copies; correlate with description
+repo_desc        Shai-Hulud Migration                migration repo description
+branch_name      shai-hulud                          any branch with this name
+workflow_path    .github/workflows/shai-hulud-workflow.yml   v1 malicious workflow
+workflow_path    .github/workflows/discussion.yaml           v2 malicious workflow
+runner_name      SHA1HULUD                           self-hosted runner label

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-13T00:00:00Z",
+  "sources": [
+    {
+      "id": "datadog_consolidated",
+      "url": "https://raw.githubusercontent.com/DataDog/indicators-of-compromise/main/shai-hulud-2.0/consolidated_iocs.csv",
+      "local": "consolidated_iocs.csv",
+      "fetched_at": "2026-05-13T00:00:00Z",
+      "description": "Datadog Security Labs consolidated, deduplicated package list aggregated across 7 vendors (helixguard, koi, reversinglabs, socketdev, stepsecurity, wiz, datadog).",
+      "license": "Apache-2.0 (Datadog IOC repository)"
+    },
+    {
+      "id": "datadog_wave2",
+      "url": "https://raw.githubusercontent.com/DataDog/indicators-of-compromise/main/shai-hulud-2.0/shai-hulud-2.0.csv",
+      "local": "shai-hulud-2.0.csv",
+      "fetched_at": "2026-05-13T00:00:00Z",
+      "description": "Datadog's manually-confirmed wave-2 (Nov 2025) backdoored package versions.",
+      "license": "Apache-2.0 (Datadog IOC repository)"
+    },
+    {
+      "id": "cobenian_packages",
+      "url": "https://raw.githubusercontent.com/Cobenian/shai-hulud-detect/main/compromised-packages.txt",
+      "local": "compromised-packages.txt",
+      "fetched_at": "2026-05-13T00:00:00Z",
+      "description": "Cobenian community-maintained 2100+ package×version list spanning Sep 2025 - May 2026 (npm + PyPI).",
+      "license": "MIT (Cobenian/shai-hulud-detect)"
+    },
+    {
+      "id": "hashes",
+      "url": "https://raw.githubusercontent.com/Cobenian/shai-hulud-detect/main/shai-hulud-detector.sh",
+      "local": "hashes.txt",
+      "fetched_at": "2026-05-13T00:00:00Z",
+      "description": "12 confirmed malicious SHA-256 hashes extracted from Cobenian detector, corroborated by Unit42 / Wiz / Datadog writeups.",
+      "license": "MIT (Cobenian/shai-hulud-detect)"
+    },
+    {
+      "id": "filenames",
+      "local": "filenames.txt",
+      "description": "Curated list of malicious filenames documented across vendor writeups (Unit42, Wiz, Datadog Security Labs, Microsoft, StepSecurity).",
+      "license": "CC0 (this project)"
+    },
+    {
+      "id": "github_patterns",
+      "local": "github_patterns.txt",
+      "description": "GitHub-side artifacts (repo names, branches, workflows, runners) extracted from vendor writeups.",
+      "license": "CC0 (this project)"
+    },
+    {
+      "id": "network",
+      "local": "network.txt",
+      "description": "Network IOCs for documentation only (not actively monitored by the scanner).",
+      "license": "CC0 (this project)"
+    }
+  ],
+  "vendor_writeups": [
+    "https://www.cisa.gov/news-events/alerts/2025/09/23/widespread-supply-chain-compromise-impacting-npm-ecosystem",
+    "https://unit42.paloaltonetworks.com/npm-supply-chain-attack/",
+    "https://www.microsoft.com/en-us/security/blog/2025/12/09/shai-hulud-2-0-guidance-for-detecting-investigating-and-defending-against-the-supply-chain-attack/",
+    "https://securitylabs.datadoghq.com/articles/shai-hulud-2.0-npm-worm/",
+    "https://www.wiz.io/blog/shai-hulud-npm-supply-chain-attack",
+    "https://www.wiz.io/blog/shai-hulud-2-0-ongoing-supply-chain-attack",
+    "https://www.reversinglabs.com/blog/shai-hulud-worm-npm",
+    "https://www.reversinglabs.com/blog/new-shai-hulud-worm-spreads-what-to-know",
+    "https://www.sysdig.com/blog/shai-hulud-the-novel-self-replicating-worm-infecting-hundreds-of-npm-packages",
+    "https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem",
+    "https://snyk.io/blog/tanstack-npm-packages-compromised/",
+    "https://socket.dev/blog/ongoing-supply-chain-attack-targets-crowdstrike-npm-packages",
+    "https://aws.amazon.com/blogs/security/defending-against-supply-chain-attacks-like-chalk-debug-and-the-shai-hulud-worm/",
+    "https://expel.com/blog/mini-shai-hulud-cross-ecosystem-supply-chain-worm-targeting-npm-pypi/"
+  ]
+}

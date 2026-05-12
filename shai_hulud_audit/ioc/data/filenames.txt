@@ -1,0 +1,23 @@
+# Shai-Hulud known malicious filenames (basename match, case-sensitive)
+# Sources: Cobenian/shai-hulud-detect, Unit42, Wiz, Datadog, Microsoft, StepSecurity
+# Format: <basename>  <severity>  <wave>  <note>
+bundle.js                          critical  v1    repurposed TruffleHog + exfil; only critical when paired with malicious lifecycle script (manifest scanner correlates)
+setup_bun.js                       critical  v2    fake Bun runtime installer
+bun_environment.js                 critical  v2    10MB+ obfuscated payload
+bun_installer.js                   critical  v2    alternative installer variant
+router_init.js                     critical  mini  May 2026 TeamPCP payload
+tanstack_runner.js                 critical  mini  TanStack campaign payload
+setup.mjs                          high      mini  loader variant (heuristic: also check lifecycle)
+transformers.pyz                   critical  mini  cross-ecosystem PyPI payload
+processor.sh                       critical  v1    branch / workflow stager
+migrate-repos.sh                   critical  v1    private->public migration script
+shai-hulud-workflow.yml            critical  v1    malicious GH Actions workflow
+discussion.yaml                    high      v2    malicious workflow (v2 variant)
+gh-token-monitor.sh                critical  v2    dead-man's-switch / persistence
+com.user.gh-token-monitor.plist    critical  v2    macOS LaunchAgent persistence
+gh-token-monitor.service           critical  v2    systemd persistence
+data.json                          medium    v1    exfil payload (only critical if double-Base64 + at repo root)
+cloud.json                         medium    v2    TruffleHog staging
+contents.json                      medium    v2    TruffleHog staging
+environment.json                   medium    v2    TruffleHog staging
+truffleSecrets.json                critical  v2    TruffleHog staging output

@@ -1,0 +1,6 @@
+# Network IOCs (documented; not actively monitored by the scanner)
+# Format: <kind>  <value>  <wave>
+url     https://webhook.site/bb8ca5f6-4175-45d2-b042-fc9ebb8170b7   v1
+host    webhook.site                                                v1
+host    api.masscan.cloud                                           v2
+host    getsession.org                                              v2  Session Protocol exfil channel

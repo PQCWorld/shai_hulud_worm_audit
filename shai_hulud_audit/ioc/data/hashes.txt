@@ -1,0 +1,21 @@
+# Shai-Hulud / Mini Shai-Hulud known malicious SHA-256 hashes
+# Format: <sha256>  <filename hint>  <wave>
+# Sources:
+#   Cobenian/shai-hulud-detect (MALICIOUS_HASHLIST array) — primary
+#   Unit42 / Wiz / Datadog Security Labs IOC writeups — corroborating
+46faab8ab153fae6e80e7cca38eab363075bb524edd79e42269217a083628f09  bundle.js  v1
+b74caeaa75e077c99f7d44f46daaf9796a3be43ecf24f2a1fd381844669da777  bundle.js  v1
+dc67467a39b70d1cd4c1f7f7a459b35058163592f4a9e8fb4dffcbba98ef210c  bundle.js  v1
+4b2399646573bb737c4969563303d8ee2e9ddbd1b271f1ca9e35ea78062538db  bundle.js  v1
+62ee164b9b306250c1172583f138c9614139264f889fa99614903c12755468d0  bun_environment.js  v2
+f099c5d9ec417d4445a0328ac0ada9cde79fc37410914103ae9c609cbc0ee068  bun_environment.js  v2
+cbb9bc5a8496243e02f3cc080efbe3e4a1430ba0671f2e43a202bf45b05479cd  bun_environment.js  v2
+a3894003ad1d293ba96d77881ccd2071446dc3f65f434669b49b3da92421901a  setup_bun.js  v2
+de0e25a3e6c1e1e5998b306b7141b3dc4c0088da9d7bb47c1c00c91e6e4f85d6  variant  v2
+81d2a004a1bca6ef87a1caf7d0e0b355ad1764238e40ff6d1b1cb77ad4f595c3  variant  v2
+83a650ce44b2a9854802a7fb4c202877815274c129af49e6c2d1d5d5d55c501e  variant  v2
+86532ed94c5804e1ca32fa67257e1bb9de628e3e48a1f56e67042dc055effb5b  variant  v3
+aba1fcbd15c6ba6d9b96e34cec287660fff4a31632bf76f2a766c499f55ca1ee  variant  v3
+ab4fcadaec49c03278063dd269ea5eef82d24f2124a8e15d7b90f2fa8601266c  variant  mini
+2ec78d556d696e208927cc503d48e4b5eb56b31abc2870c2ed2e98d6be27fc96  variant  mini
+7c12d8614c624c70d6dd6fc2ee289332474abaa38f70ebe2cdef064923ca3a9b  variant  mini

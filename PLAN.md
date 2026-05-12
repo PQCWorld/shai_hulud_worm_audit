@@ -417,20 +417,29 @@ Upstream sources (initial set, pinned in `manifest.json`):
 
 ## 8. Milestones
 
-| # | Milestone | Definition of done |
-|---|---|---|
-| M0 | Plan + repo scaffolding (this PR) | `PLAN.md`, empty package skeleton, MIT license, CI runs `pytest` (no tests yet) |
-| M1 | Layers 1–3 (manifest/lockfile/installed) for npm | Detects every Datadog-listed `name@version` in a fixture project; JSON output |
-| M2 | Layers 4–6 (hashes, filenames, lifecycle) | All 8 known hashes detected on synthetic fixtures |
-| M3 | PyPI support | Mini Shai-Hulud PyPI fixtures (`mistralai==2.4.6`, `guardrails-ai==0.10.1`) flagged |
-| M4 | Layer 7 (git history) | Removed `bundle.js` in past commit still detected |
-| M5 | `--update` + weekly workflow | PR auto-opens with diff against upstream |
-| M6 | Layers 8–9 (`--github`, `--host`) | Find `Shai-Hulud` repo / `shai-hulud` branch / `gh-token-monitor` LaunchAgent on test machine |
-| M7 | SARIF output + GitHub Action wrapper | One-line `uses:` block usable in any repo |
-| M8 | Remediation playbook + docs polish | `README.md` covers install, run, false-positive triage |
-| M9 | 1.0.0 release | Tagged, signed, published to PyPI as `shai-hulud-audit` |
+Current release: **v0.1.0** (commit `0b28354`). **7 of 10 milestones complete**;
+**M6** and **M7** are partial; **M9** has not started. Status legend:
+✅ done · ⚠️ partial · ⛔ not started.
+
+| # | Status | Milestone | Definition of done | Evidence |
+|---|:---:|---|---|---|
+| M0 | ✅ | Plan + repo scaffolding | `PLAN.md`, package skeleton, MIT license, CI runs `pytest` | `PLAN.md`, `pyproject.toml`, `LICENSE`, `.github/workflows/ci.yml` |
+| M1 | ✅ | Layers 1–3 (manifest / lockfile / installed) for npm | Detects every Datadog-listed `name@version` in a fixture project; JSON output | `shai_hulud_audit/scan/{lockfiles,manifests,installed}.py`; 27 tests green |
+| M2 | ✅ | Layers 4–6 (hashes, filenames, lifecycle) | All 8 known hashes detected on synthetic fixtures | 16 hashes shipped in `ioc/data/hashes.txt` (DoD required 8); `test_hashes_filenames_lifecycle.py` covers all three layers |
+| M3 | ✅ | PyPI support | Mini Shai-Hulud PyPI fixtures (`mistralai==2.4.6`, `guardrails-ai==0.10.1`) flagged | Lockfile + manifest scanners handle `requirements*.txt`, `poetry.lock`, `Pipfile.lock`, `uv.lock`, `pyproject.toml`; `test_requirements_txt_pypi_detected` passes |
+| M4 | ✅ | Layer 7 (git history) | Removed `bundle.js` in past commit still detected | `scan/git_history.py`; `test_finds_deleted_setup_bun_in_history`, `test_finds_shai_hulud_branch` pass |
+| M5 | ✅ | `--update` + weekly workflow | PR auto-opens with diff against upstream | `ioc/updater.py`; `.github/workflows/ioc-refresh.yml` (cron `17 6 * * 1` + `peter-evans/create-pull-request`) |
+| M6 | ⚠️ | Layers 8–9 (`--github`, `--host`) | Find `Shai-Hulud` repo / `shai-hulud` branch / `gh-token-monitor` LaunchAgent on test machine | Code in `scan/{github,host}.py`. **1 of 3 DoD checks** has an automated test (`shai-hulud` branch via `test_finds_shai_hulud_branch`). The `--github` and LaunchAgent paths are implemented but not exercised by an end-to-end fixture; needs a mocked `gh` CLI + planted plist in `tmp_path` to close. |
+| M7 | ⚠️ | SARIF output + GitHub Action wrapper | One-line `uses:` block usable in any repo | SARIF 2.1.0 emitted by `report/sarif.py` and validated by `test_sarif_format_parses`. `README.md` ships a copy-paste workflow recipe, but **no marketplace-published `PQCWorld/shai-hulud-audit-action@v1`** exists yet, so the `uses:` block is multi-line (`pip install` + `shai-hulud-audit` + `upload-sarif`) rather than one line. |
+| M8 | ✅ | Remediation playbook + docs polish | `README.md` covers install, run, false-positive triage | Playbook rendered by `report/human.py` and documented in `PLAN.md` §5 + `README.md`; false-positive guidance in both |
+| M9 | ⛔ | 1.0.0 release | Tagged, signed, published to PyPI as `shai-hulud-audit` | No `v1.0.0` tag; not on PyPI. Currently at `0.1.0` in `pyproject.toml` / `__init__.py`. Blocked by M6 and M7 closure. |
 
 Each milestone is a single PR. No work begins on Mn+1 until Mn merges.
+
+**Companion Claude Code skill** (`.claude/skills/shai-hulud-audit/SKILL.md`,
+committed `0b28354`) ships alongside the CLI and auto-invokes a five-phase
+manual audit playbook when the tool itself is not installed. Out of scope of
+the M0–M9 list — bonus deliverable.
 
 ---
 

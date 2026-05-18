@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-13T00:00:00Z",
+  "generated_at": "2026-05-18T10:41:49Z",
   "sources": [
     {
       "id": "datadog_consolidated",
       "url": "https://raw.githubusercontent.com/DataDog/indicators-of-compromise/main/shai-hulud-2.0/consolidated_iocs.csv",
       "local": "consolidated_iocs.csv",
-      "fetched_at": "2026-05-13T00:00:00Z",
+      "fetched_at": "2026-05-18T10:41:49Z",
       "description": "Datadog Security Labs consolidated, deduplicated package list aggregated across 7 vendors (helixguard, koi, reversinglabs, socketdev, stepsecurity, wiz, datadog).",
       "license": "Apache-2.0 (Datadog IOC repository)"
     },
@@ -14,7 +14,7 @@
       "id": "datadog_wave2",
       "url": "https://raw.githubusercontent.com/DataDog/indicators-of-compromise/main/shai-hulud-2.0/shai-hulud-2.0.csv",
       "local": "shai-hulud-2.0.csv",
-      "fetched_at": "2026-05-13T00:00:00Z",
+      "fetched_at": "2026-05-18T10:41:49Z",
       "description": "Datadog's manually-confirmed wave-2 (Nov 2025) backdoored package versions.",
       "license": "Apache-2.0 (Datadog IOC repository)"
     },
@@ -22,17 +22,19 @@
       "id": "cobenian_packages",
       "url": "https://raw.githubusercontent.com/Cobenian/shai-hulud-detect/main/compromised-packages.txt",
       "local": "compromised-packages.txt",
-      "fetched_at": "2026-05-13T00:00:00Z",
-      "description": "Cobenian community-maintained 2100+ package×version list spanning Sep 2025 - May 2026 (npm + PyPI).",
+      "fetched_at": "2026-05-18T10:41:49Z",
+      "description": "Cobenian community-maintained 2100+ package\u00d7version list spanning Sep 2025 - May 2026 (npm + PyPI).",
       "license": "MIT (Cobenian/shai-hulud-detect)"
     },
     {
       "id": "hashes",
       "url": "https://raw.githubusercontent.com/Cobenian/shai-hulud-detect/main/shai-hulud-detector.sh",
       "local": "hashes.txt",
-      "fetched_at": "2026-05-13T00:00:00Z",
+      "fetched_at": "2026-05-18T10:41:49Z",
       "description": "12 confirmed malicious SHA-256 hashes extracted from Cobenian detector, corroborated by Unit42 / Wiz / Datadog writeups.",
-      "license": "MIT (Cobenian/shai-hulud-detect)"
+      "license": "MIT (Cobenian/shai-hulud-detect)",
+      "sha256": "46cfd82ea375165d97828f646f74631221dd29254a652af840ccc3739702ff55",
+      "bytes": 228480
     },
     {
       "id": "filenames",
